@@ -1,0 +1,9 @@
+
+* {
+    box-sizing: border-box;
+}
+
+.footer{
+    text-align: center;
+    padding: 15px;
+}

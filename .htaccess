@@ -1,0 +1,19 @@
+Options -Indexes
+DirectoryIndex index.html index.php
+Options +FollowSymlinks
+
+AddDefaultCharset utf-8 
+
+RewriteEngine  On
+RewriteBase    /
+
+# условие "строка не файл на сервере"
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# условие "строка не каталог на сервере"
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# перенаправление в index.php если два верхних условия прошли
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+
+#index.php?route=open/&file=text1.txt
